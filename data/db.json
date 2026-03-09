@@ -1,0 +1,372 @@
+{
+  "bot_info": {
+    "name": "Toshkent Moskva Avtobus",
+    "bus_model": "Yutong",
+    "capacity": 51,
+    "features": [
+      "✅ Ergonomik kreslo",
+      "🔌 Har bir o'rindiqda rozetka (220V)",
+      "❄️ Iqlim nazorati",
+      "👨‍✈️ Tajribali haydovchilar"
+    ],
+    "bus_photo_file_id": "AgACAgIAAxkDAAMDaa6_7BURLd27wlsJ8lxhQAi46dIAAm8VaxuIWHFJEo6kMHQYNdMBAAMCAAN4AAM6BA"
+  },
+  "directions": [
+    {
+      "id": "uz_ru",
+      "label": "🇺🇿 O'zbekistondan ➡️ 🇷🇺 Rossiyaga",
+      "type": "uz_to_ru",
+      "sources": [
+        {
+          "name": "Toshkent",
+          "cities": [
+            {
+              "name": "Moskva",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Sankt-Peterburg",
+              "price_uzs": 1300000,
+              "price_rub": 11000
+            },
+            {
+              "name": "Qozon",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Samara",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Vladimir",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Nijniy Novgorod",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Krasnodar",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Rostov-na-Donu",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Volgograd",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Saratov",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Novosibirsk",
+              "price_uzs": 750000,
+              "price_rub": 5000
+            },
+            {
+              "name": "Barnaul",
+              "price_uzs": 750000,
+              "price_rub": 5000
+            },
+            {
+              "name": "Perm",
+              "price_uzs": 750000,
+              "price_rub": 0
+            },
+            {
+              "name": "Ufa",
+              "price_uzs": 750000,
+              "price_rub": 0
+            },
+            {
+              "name": "Krasnoyarsk",
+              "price_uzs": 1000000,
+              "price_rub": 0
+            },
+            {
+              "name": "Ekaterinburg",
+              "price_uzs": 850000,
+              "price_rub": 0
+            },
+            {
+              "name": "Chelyabinsk",
+              "price_uzs": 850000,
+              "price_rub": 0
+            },
+            {
+              "name": "Irkutsk",
+              "price_uzs": 1300000,
+              "price_rub": 0
+            },
+            {
+              "name": "Tyumen",
+              "price_uzs": 1000000,
+              "price_rub": 0
+            }
+          ]
+        },
+        {
+          "name": "Urganch",
+          "cities": [
+            {
+              "name": "Moskva",
+              "price_uzs": 1200000,
+              "price_rub": 8500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ru_uz",
+      "label": "🇷🇺 Rossiyadan ➡️ 🇺🇿 O'zbekistonga",
+      "type": "ru_to_uz",
+      "sources": [
+        {
+          "name": "Toshkent",
+          "cities": [
+            {
+              "name": "Moskva",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Sankt-Peterburg",
+              "price_uzs": 1300000,
+              "price_rub": 11000
+            },
+            {
+              "name": "Qozon",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Samara",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Vladimir",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Nijniy Novgorod",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Krasnodar",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Rostov-na-Donu",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Volgograd",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Saratov",
+              "price_uzs": 1000000,
+              "price_rub": 7000
+            },
+            {
+              "name": "Novosibirsk",
+              "price_uzs": 750000,
+              "price_rub": 5000
+            },
+            {
+              "name": "Barnaul",
+              "price_uzs": 750000,
+              "price_rub": 5000
+            },
+            {
+              "name": "Perm",
+              "price_uzs": 750000,
+              "price_rub": 0
+            },
+            {
+              "name": "Ufa",
+              "price_uzs": 750000,
+              "price_rub": 0
+            },
+            {
+              "name": "Krasnoyarsk",
+              "price_uzs": 1000000,
+              "price_rub": 0
+            },
+            {
+              "name": "Ekaterinburg",
+              "price_uzs": 850000,
+              "price_rub": 0
+            },
+            {
+              "name": "Chelyabinsk",
+              "price_uzs": 850000,
+              "price_rub": 0
+            },
+            {
+              "name": "Irkutsk",
+              "price_uzs": 1300000,
+              "price_rub": 0
+            },
+            {
+              "name": "Tyumen",
+              "price_uzs": 1000000,
+              "price_rub": 0
+            }
+          ]
+        },
+        {
+          "name": "Urganch",
+          "cities": [
+            {
+              "name": "Moskva",
+              "price_uzs": 1200000,
+              "price_rub": 8500
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "user_id": 8146600957,
+      "username": "dream_tech_manager",
+      "first_name": "Dream",
+      "joined": "2026-03-09T17:40:33.667536",
+      "last_seen": "2026-03-09T20:03:48.762337"
+    },
+    {
+      "user_id": 1332582307,
+      "username": "musulman_0201",
+      "first_name": "Iqboljon",
+      "joined": "2026-03-09T17:49:43.437099",
+      "last_seen": "2026-03-09T19:11:39.543084"
+    },
+    {
+      "user_id": 5906794393,
+      "username": "yuldashev_meneger",
+      "first_name": "WEB",
+      "joined": "2026-03-09T19:02:46.649813",
+      "last_seen": "2026-03-09T19:04:21.859036"
+    }
+  ],
+  "groups": [
+    {
+      "group_id": -1003739533162,
+      "title": "ToshkentMoskvaBus group",
+      "added": "2026-03-09T18:45:50.241857"
+    },
+    {
+      "group_id": -1002727548707,
+      "title": "Frontend Upper",
+      "added": "2026-03-09T19:39:17.639619"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 8146600957,
+      "username": "dream_tech_manager",
+      "first_name": "Dream",
+      "direction": "🇺🇿 O'zbekistondan ➡️ 🇷🇺 Rossiyaga",
+      "city": "Saratov",
+      "price_uzs": 1000000,
+      "price_rub": 7000,
+      "passenger_count": 4,
+      "phone": "+998507723108",
+      "created": "2026-03-09T17:41:47.948765",
+      "status": "new"
+    },
+    {
+      "id": 2,
+      "user_id": 1332582307,
+      "username": "musulman_0201",
+      "first_name": "Iqboljon",
+      "direction": "🇺🇿 O'zbekistondan ➡️ 🇷🇺 Rossiyaga",
+      "source": "Toshkent",
+      "city": "Tyumen",
+      "price_display": "1 000 000 so'm",
+      "passenger_count": 3,
+      "phone": "+998944450980",
+      "created": "2026-03-09T18:48:09.204020",
+      "status": "new"
+    },
+    {
+      "id": 3,
+      "user_id": 5906794393,
+      "username": "yuldashev_meneger",
+      "first_name": "WEB",
+      "direction": "🇷🇺 Rossiyadan ➡️ 🇺🇿 O'zbekistonga",
+      "source": "Urganch",
+      "city": "Moskva",
+      "price_display": "8 500 ₽",
+      "passenger_count": 4,
+      "phone": "+998334101442",
+      "created": "2026-03-09T19:03:11.373134",
+      "status": "new"
+    },
+    {
+      "id": 4,
+      "user_id": 5906794393,
+      "username": "yuldashev_meneger",
+      "first_name": "WEB",
+      "direction": "🇺🇿 O'zbekistondan ➡️ 🇷🇺 Rossiyaga",
+      "source": "Toshkent",
+      "city": "Ekaterinburg",
+      "price_display": "850 000 so'm",
+      "passenger_count": 5,
+      "phone": "+998334101442",
+      "created": "2026-03-09T19:04:40.015912",
+      "status": "new"
+    }
+  ],
+  "contacts": {
+    "phone_uz": "+998 99 073 00 22",
+    "phone_ru": "+7 967 156 00 22",
+    "work_hours": "08:00 - 22:00"
+  },
+  "broadcast_settings": {
+    "is_active": false,
+    "interval_minutes": 120,
+    "message_id": 82,
+    "from_chat_id": 8146600957
+  },
+  "campaigns": [
+    {
+      "id": 1,
+      "is_active": true,
+      "interval_minutes": 150,
+      "message_id": 91,
+      "from_chat_id": 8146600957,
+      "last_run": 1773068547.4969277
+    },
+    {
+      "id": 2,
+      "is_active": true,
+      "interval_minutes": 60,
+      "message_id": 95,
+      "from_chat_id": 8146600957,
+      "last_run": 1773068549.831446
+    }
+  ]
+}
