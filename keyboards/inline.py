@@ -46,7 +46,7 @@ def sources_keyboard(direction_id: str) -> InlineKeyboardMarkup:
     for s in sources:
         buttons.append([
             InlineKeyboardButton(
-                text=f"📍 {s['name']}",
+                text=s['name'],
                 callback_data=f"src:{direction_id}:{s['name']}"
             )
         ])
@@ -68,7 +68,7 @@ def cities_keyboard(direction_id: str, source_name: str) -> InlineKeyboardMarkup
     for i, city in enumerate(cities):
         row.append(
             InlineKeyboardButton(
-                text=f"🏙 {city['name']}",
+                text=city['name'],
                 callback_data=f"cty:{direction_id}:{source_name}:{city['name']}"
             )
         )
@@ -129,7 +129,7 @@ def admin_menu_keyboard() -> InlineKeyboardMarkup:
         [InlineKeyboardButton(text="💰 Narxlarni tahrirlash", callback_data="adm:prices")],
         [InlineKeyboardButton(text="📋 Buyurtmalar", callback_data="adm:orders")],
         [
-            InlineKeyboardButton(text="📢 1-marta tarqatish", callback_data="adm:broadcast"),
+            InlineKeyboardButton(text="📢 Reklama yuborish", callback_data="adm:broadcast"),
             InlineKeyboardButton(text="⏱ Avto-reklama", callback_data="adm:ab_list")
         ],
         [InlineKeyboardButton(text="👥 Guruhlar", callback_data="adm:groups")],
@@ -196,7 +196,7 @@ def admin_sources_keyboard(direction_id: str) -> InlineKeyboardMarkup:
     for s in sources:
         buttons.append([
             InlineKeyboardButton(
-                text=f"📍 {s['name']}",
+                text=s['name'],
                 callback_data=f"adm_src:{direction_id}:{s['name']}"
             )
         ])

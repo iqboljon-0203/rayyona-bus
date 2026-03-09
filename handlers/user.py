@@ -120,11 +120,11 @@ async def on_source_selected(callback: CallbackQuery, state: FSMContext):
     for city in cities:
         # Construct route string and decide currency
         if direction.get("type") == "uz_to_ru":
-            route = f"{source_name} → {city['name']}"
+            route = f"{source_name} - {city['name']}"
             price = f"{city['price_uzs']:,}".replace(",", " ")
             price_lines.append(f"  {route}\n  💵 {price} so'm\n")
         else:
-            route = f"{city['name']} → {source_name}"
+            route = f"{city['name']} - {source_name}"
             price = f"{city['price_rub']:,}".replace(",", " ")
             price_lines.append(f"  {route}\n  💵 {price} ₽\n")
 
@@ -137,7 +137,7 @@ async def on_source_selected(callback: CallbackQuery, state: FSMContext):
 
     text = (
         f"🚌 <b>{direction['label']}</b>\n"
-        f"📍 Tanlangan: <b>{source_name}</b>\n\n"
+        f"Tanlangan: <b>{source_name}</b>\n\n"
         f"━━━━━ 💰 NARXLAR ━━━━━\n\n"
         f"{prices_text}"
         f"━━━━━━━━━━━━━━━━━━━━\n\n"
@@ -175,11 +175,11 @@ async def on_city_selected(callback: CallbackQuery, state: FSMContext):
 
     # Determine route name and price based on type
     if direction.get("type") == "uz_to_ru":
-        route_name = f"{source_name} → {city_name}"
+        route_name = f"{source_name} - {city_name}"
         price_display = f"{city['price_uzs']:,}".replace(",", " ") + " so'm"
         flag = "🇺🇿"
     else:
-        route_name = f"{city_name} → {source_name}"
+        route_name = f"{city_name} - {source_name}"
         price_display = f"{city['price_rub']:,}".replace(",", " ") + " rubl"
         flag = "🇷🇺"
 
@@ -251,11 +251,19 @@ async def on_contact_info(callback: CallbackQuery):
     """Show contact information."""
     contacts = db._load().get("contacts", {})
     text = (
-        "📞 <b>Bog'lanish ma'lumotlari:</b>\n\n"
-        f"🇺🇿 O'zbekiston: {contacts.get('phone_uz', 'Koʻrsatilmagan')}\n"
-        f"🇷🇺 Rossiya: {contacts.get('phone_ru', 'Koʻrsatilmagan')}\n\n"
-        f"🕐 Ish vaqti: {contacts.get('work_hours', '08:00 - 22:00')}\n\n"
-        "Qo'shimcha savollar uchun qo'ng'iroq qiling!"
+        "📞 <b>Biz bilan bog‘lanish:</b>\n\n"
+        "Savollaringiz bormi yoki chipta buyurtma qilmoqchimisiz? Bizning operatorlarimiz sizga yordam beradi!\n\n"
+        "🏢 <b>Manzil:</b>\n"
+        "Toshkent shahri, Toshkent xalqa yo'li\n\n"
+        "📍 <b>Mo'ljal:</b>\n"
+        "Qo'yliq bozori, Vodiy Pitak\n\n"
+        "☎️ <b>Telefon:</b>\n"
+        "<b>+998 (99) 073-00-22</b>\n"
+        "<b>+7 (967) 156-00-22</b>\n\n"
+        "🌍 <b>Rasmiy sayt:</b>\n"
+        "<a href='https://www.avtobus-tashkent-moskva.uz/'>avtobus-tashkent-moskva.uz</a>\n\n"
+        "🕒 <b>Ish tartibi:</b>\n"
+        "Har kuni 08:00 dan 22:00 gacha."
     )
     is_admin = callback.from_user.id in ADMIN_IDS
 
@@ -263,14 +271,16 @@ async def on_contact_info(callback: CallbackQuery):
         await callback.message.edit_text(
             text,
             reply_markup=main_menu_keyboard(is_admin=is_admin),
-            parse_mode="HTML"
+            parse_mode="HTML",
+            disable_web_page_preview=True
         )
     except Exception:
         await callback.message.delete()
         await callback.message.answer(
             text,
             reply_markup=main_menu_keyboard(is_admin=is_admin),
-            parse_mode="HTML"
+            parse_mode="HTML",
+            disable_web_page_preview=True
         )
     await callback.answer()
 
@@ -370,9 +380,9 @@ async def on_contact_shared(message: Message, state: FSMContext):
     )
 
     if data.get("type") == "uz_to_ru":
-        route = f"{data['source_name']} → {data['city_name']}"
+        route = f"{data['source_name']} - {data['city_name']}"
     else:
-        route = f"{data['city_name']} → {data['source_name']}"
+        route = f"{data['city_name']} - {data['source_name']}"
 
     confirm_text = (
         "✅ <b>Buyurtmangiz qabul qilindi!</b>\n\n"
@@ -528,10 +538,10 @@ async def on_back_to_cities(callback: CallbackQuery, state: FSMContext):
     
     for city in cities:
         if direction.get("type") == "uz_to_ru":
-            route = f"{source_name} → {city['name']}"
+            route = f"{source_name} - {city['name']}"
             price_lines.append(f"  {route}\n  💵 {city['price_uzs']:,}".replace(",", " ") + " so'm\n")
         else:
-            route = f"{city['name']} → {source_name}"
+            route = f"{city['name']} - {source_name}"
             price_lines.append(f"  {route}\n  💵 {city['price_rub']:,}".replace(",", " ") + " ₽\n")
 
     prices_text = "\n".join(price_lines)
@@ -543,7 +553,7 @@ async def on_back_to_cities(callback: CallbackQuery, state: FSMContext):
 
     text = (
         f"🚌 <b>{direction['label']}</b>\n"
-        f"📍 Tanlangan: <b>{source_name}</b>\n\n"
+        f"Tanlangan: <b>{source_name}</b>\n\n"
         f"━━━━━ 💰 NARXLAR ━━━━━\n\n"
         f"{prices_text}"
         f"━━━━━━━━━━━━━━━━━━━━\n\n"
