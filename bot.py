@@ -7,6 +7,8 @@ import asyncio
 import logging
 import sys
 
+import os
+from aiohttp import web
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
@@ -22,6 +24,23 @@ logging.basicConfig(
     stream=sys.stdout
 )
 logger = logging.getLogger(__name__)
+
+
+async def handle(request):
+    """Simple health check handler."""
+    return web.Response(text="Bot is running!")
+
+
+async def start_web_server():
+    """Start a simple web server to satisfy Render's health check."""
+    app = web.Application()
+    app.router.add_get("/", handle)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    port = int(os.environ.get("PORT", 8080))
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
+    logger.info(f"✅ Web server ishga tushdi (Port: {port})")
 
 
 async def main():
@@ -49,6 +68,9 @@ async def main():
     dp.include_router(user.router)
 
     logger.info("🚌 Bot ishga tushdi!")
+
+    # Start health check server for Render
+    asyncio.create_task(start_web_server())
 
     # Start the background broadcast worker
     from scheduler import auto_broadcast_worker
